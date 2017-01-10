@@ -8,7 +8,11 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import com.ideyatech.ut.lecture.SharpCalculator;
+import com.ideyatech.ut.exercise.Cashier;
+import com.ideyatech.ut.exercise.Product;
+import com.ideyatech.ut.exercise.Promo;
+import com.ideyatech.ut.exercise.PromoDiscount;
+import com.ideyatech.ut.exercise.PromoFreeProduct;
 
 public class CashierTest {
 
