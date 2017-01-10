@@ -8,11 +8,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import com.ideyatech.ut.exercise.Cashier;
-import com.ideyatech.ut.exercise.Product;
-import com.ideyatech.ut.exercise.Promo;
-import com.ideyatech.ut.exercise.PromoDiscount;
-import com.ideyatech.ut.exercise.PromoFreeProduct;
+import com.ideyatech.ut.lecture.SharpCalculator;
 
 public class CashierTest {
 
@@ -26,7 +22,7 @@ public class CashierTest {
 		public static void initClass()
 		{
 			System.out.println("[TEST] Cashier Class Start");
-			System.out.println("[ Initializing Products, PromoList, Cashier, Shopping Cart ]");
+			
 		}
 		
 		@Before
@@ -49,12 +45,64 @@ public class CashierTest {
 		public void testGetTotalPrice()
 		{
 			ArrayList<Product> products = new ArrayList<Product>();
+			
 			products.add(small);
 			products.add(medium);
 			products.add(large);
 			products.add(add1GB);
 			double result = cashier.getTotalPrice(products);
+			//System.out.println("[RESULT] " + result);
 			assertEquals( 6000, result,0);
+		}
+		
+		@Test
+		public void test1()
+		{
+			ArrayList<Product> products = new ArrayList<Product>();
+			products.add(small);
+			products.add(small);
+			products.add(large);
+			products.add(large);
+			products.add(large);
+			products.add(large);
+			
+			double result = cashier.getTotalPrice(products);
+			System.out.println("[RESULT] " + result);
+			assertEquals( 14000, result,0);
+		}
+		
+		@Test
+		public void test2()
+		{
+			ArrayList<Product> products = new ArrayList<Product>();
+			products.add(small);
+			products.add(small);
+			products.add(small);
+			products.add(medium);
+			
+			double result = cashier.getTotalPrice(products);
+			System.out.println("[RESULT] " + result);
+			assertEquals( 3500, result,0);
+		}
+		
+		@Test
+		public void test3()
+		{
+			ArrayList<Product> products = new ArrayList<Product>();
+			products.add(small);
+			products.add(small);
+			products.add(small);
+			products.add(medium);
+			products.add(medium);
+			products.add(large);
+			products.add(large);
+			products.add(large);
+			products.add(large);
+			products.add(large);
+			
+			double result = cashier.getTotalPrice(products);
+			System.out.println("[RESULT] " + result);
+			assertEquals(20000, result,0);
 		}
 		
 		@Test
