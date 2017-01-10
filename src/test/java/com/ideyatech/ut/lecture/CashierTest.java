@@ -39,22 +39,25 @@ public class CashierTest {
 
 			for (int i = 0; i < promoList.length; i++)
 				cashier.addPromo(promoList[i]);
-	
 		}
 		
-		@Test //Testing
-		public void testDisplayAndTotalComputation()
+		@Test
+		public void testGetTotalPrice()
 		{
 			ArrayList<Product> products = new ArrayList<Product>();
 			products.add(small);
 			products.add(medium);
 			products.add(large);
 			products.add(add1GB);
-			
-			double result = cashier.displayAndComputeTotal(products);
-			
-			assertEquals("Sum should be 15", 15, result,0);
+			double result = cashier.getTotalPrice(products);
+			assertEquals( 6000, result,0);
 		}
 		
-		
+		@Test
+		public void testGetPromoItemPrice()
+		{
+			Promo promo = new PromoFreeProduct("5 LARGE Get 1 SMALL free", large, 5, small, 1);
+			double result = cashier.getPromoItemPrice(promo);
+			assertEquals( 15000, result,0);
+		}
 }
