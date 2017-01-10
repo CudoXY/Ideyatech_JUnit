@@ -40,6 +40,9 @@ public class Cashier
 		Promo p = getPromo(products);
 		do
 		{
+			if (p == null)
+				break;
+
 			sb.append(getReceiptPromoItem(p)).append("\n");
 			removeCountedPromoItems(products, p);
 		}
@@ -137,6 +140,9 @@ public class Cashier
 		Promo p = getPromo(products);
 		do
 		{
+			if (p == null)
+				break;
+
 			totalCost += getPromoItemPrice(p);
 			removeCountedPromoItems(products, p);
 		}

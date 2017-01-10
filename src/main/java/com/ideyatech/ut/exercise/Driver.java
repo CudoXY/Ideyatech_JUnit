@@ -21,9 +21,11 @@ public class Driver
 		ShoppingCart shoppingCart = new ShoppingCart();
 
 		shoppingCart.addProduct(small);
-		shoppingCart.addProduct(medium);
+		shoppingCart.addProduct(small);
 		shoppingCart.addProduct(large);
-		shoppingCart.addProduct(add1GB);
+		shoppingCart.addProduct(large);
+		shoppingCart.addProduct(large);
+		shoppingCart.addProduct(large);
 
 		shoppingCart.checkout(cashier);
 	}
